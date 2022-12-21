@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 
+var unflatten = require("flat").unflatten;
+
 export default function Home({ msg }) {
   return (
     <div>
@@ -21,6 +23,8 @@ export default function Home({ msg }) {
 }
 
 export async function getServerSideProps(context) {
+  const out = unflatten({ ...context.query });
+
   return {
     props: { msg: "PwnFunction" },
   };
